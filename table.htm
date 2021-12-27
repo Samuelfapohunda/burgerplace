@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+   .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+body {
+  background-color: #e5e5e5;
+  background-image: url(burg.gif);
+  background-repeat: no-repeat;
+  background-size: 1200px 700px;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -7px;
+  background-color: #894c00;
+}
+.hamburger {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link{
+  font-size: 1.6rem;
+  font-weight: 400;
+  color:  white;
+}
+.nav-link:hover{
+  color: #DD8515;
+}
+
+  
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #DD8515;
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+      position: fixed;
+      left: -200%;
+      top: 55px;
+      flex-direction: column;
+      background-color: #894c00;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow:
+          0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+  .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+  }
+
+.body {
+  background: url(burg.gif);
+  background-size: 300px 300px;
+}
+
+  .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu.active {
+      left: 0;
+  }
+ .navbar {
+   width: 98%;
+   margin-left: -9px;
+ }
+  .nav-item {
+      margin: 2.5rem 0;
+  }
+
+  .hamburger {
+      display: block;
+      cursor: pointer;
+  }
+  input[type="submit"] {
+          	background-color: #894c00;
+          color: white;
+          font-weight: bold;
+          font-size: 1.3em;
+          border: none;
+          border-radius: 5em;
+          display: inline-block;
+          padding: .8em 2em;
+          width: unset;
+          margin-top: .5em;
+          cursor: pointer;
+          }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="nav-logo">BURGER <br> PLACE</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="eniolaburger.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="table.htm" class="nav-link">Order now</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Payments</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <div class="spa" style="position: absolute;top: 100px; left: 300px; color: white; ">
+      <label for="name" style="font-size: 25px;">Date:</label>
+      <input type="text" id="Date" style="height: 20px;  width: 180px; padding: 13.2px;"/><br>
+      <label for="name" style="font-size: 25px;">Time:</label>
+      <input type="text" id="Time" style="height: 20px; width: 228px;  margin-top: 40px;  padding: 13.2px;"/><br>
+      <label for="name" style="font-size: 25px;">Email:</label>
+      <input type="text" id="Email" style="height: 20px; width: 228px;  margin-top: 40px;  padding: 13.2px;"/><br>
+      <label for="name" style="font-size: 25px;">Name:</label>
+      <input type="text" id="Name" style="height: 20px; width: 228px;  margin-top: 40px;  padding: 13.2px;"/><br>
+      <label for="name" style="font-size: 25px;">Phone:</label>
+      <input type="text" id="Phone" style="height: 20px; width: 228px;  margin-top: 40px;  padding: 13.2px;"/><br>
+  <a href="sms: +234708025878&body=Hi%20there%20i%20will%20like%20to%20place%20an%20order%20for"><input type="submit" value="Send Message" onclick="sendMessage()" style="   font-size: 1.3em;
+   border: none;
+   border-radius: 5em;
+   padding: 2em 4em;
+   position: absolute;
+   left: 370px;
+   top: 320px;
+          width: unset;
+          cursor: pointer;
+   display: inline-block; color: white; margin-top: 40px;	background-color: #894c00;" /></a> 
+    </div>
+    <script>
+let dateEl = document.getElementById("date")
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+function sendMessage() {
+  console.log(dateEl);
+}
+    </script>
+</body>
+</html>
